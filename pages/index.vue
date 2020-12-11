@@ -68,7 +68,7 @@ export default {
   },
   methods: {
     goToBlog() {
-      window.location.href = "https://www.weituandui.co:8000";
+      window.location.href = "https://101.91.216.211:8000";
     },
     _jieliu(callback, delay) {
       let currentTime = new Date();
