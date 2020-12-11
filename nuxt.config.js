@@ -1,3 +1,5 @@
+import fs from "fs";
+import path from "path";
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: "static",
@@ -10,15 +12,15 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       {
         name: "keywords",
-        content: "微团队,淘客,weituandui.co,www.weituandui.co"
+        content: "微团队,淘客,weituandui.co,www.weituandui.co",
       },
       {
         hid: "description",
         name: "description",
-        content: "微团队,每个人自己的团队"
-      }
+        content: "微团队,每个人自己的团队",
+      },
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -36,32 +38,29 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa"
+    "@nuxtjs/pwa",
   ],
   pwa: {
     manifest: {
       name: "微团队",
       lang: "fa",
-      useWebmanifestExtension: false
-    }
+      useWebmanifestExtension: false,
+    },
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
   server: {
-    port: 80,
+    port: 443,
     host: "0.0.0.0",
     timing: false,
-    // https: {
-    //   key: fs.readFileSync(
-    //     path.resolve("static/www.laycoder.com", "./2_www.laycoder.com.key")
-    //   ),
-    //   cert: fs.readFileSync(
-    //     path.resolve(
-    //       "static/www.laycoder.com",
-    //       "./1_www.laycoder.com_bundle.crt"
-    //     )
-    //   )
-    // }
-  }
+    https: {
+      key: fs.readFileSync(
+        path.resolve("static/ssl", "./3866877_www.weituandui.co.key")
+      ),
+      cert: fs.readFileSync(
+        path.resolve("static/ssl", "./3866877_www.weituandui.co.pem")
+      ),
+    },
+  },
 };
