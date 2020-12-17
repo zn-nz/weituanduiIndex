@@ -32,7 +32,7 @@
           href="http://beian.miit.gov.cn/"
           v-if="recordNumber"
           >{{ recordNumber }}</a
-        >微团队 版权所有
+        >杭州微团队科技有限公司  版权所有
       </p>
     </footer>
   </div>
